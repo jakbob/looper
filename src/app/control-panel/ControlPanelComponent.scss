@@ -1,0 +1,10 @@
+@import "shared";
+
+.control-panel {
+  flex: 0 0 auto;
+  background: $color--orange;
+  border-bottom: 10px solid darken($color--orange, 15%);
+  padding: $spacing--medium;
+  display: flex;
+  justify-content: space-between;
+}

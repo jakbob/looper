@@ -1,0 +1,18 @@
+@import "shared";
+
+.sequencer {
+  flex: 1 1 auto;
+  background: $color--teal;
+  padding: $spacing--medium;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.step {
+  flex: 0 0 auto;
+  width: 8rem;
+  height: 8rem;
+  background: $color--orange;
+  margin: $spacing--medium;
+}

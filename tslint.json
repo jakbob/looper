@@ -1,9 +1,12 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "quotemark": [
       true,
       "single"
-    ]
+    ],
+    "interface-name": false,
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "jsx-no-lambda": false,
   }
 }

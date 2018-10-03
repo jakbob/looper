@@ -41,6 +41,7 @@
     "@types/node": "^10.10.2",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
+    "@types/react-redux": "^6.0.9",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
@@ -50,14 +51,13 @@
     "jest": "^23.6.0",
     "node-sass": "^4.9.3",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.0.3",
     "uglifyjs-webpack-plugin": "^2.0.1",
@@ -68,6 +68,11 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "react": "^16.5.2"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "typesafe-actions": "^2.0.4"
   }
 }

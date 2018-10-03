@@ -1,0 +1,15 @@
+@import "shared";
+
+.label {
+  color: $color--text;
+  font-size: $font-size--large;
+}
+
+.input {
+  border: none;
+  background: none;
+  font-size: $font-size--large;
+  width: 2.5em;
+  margin-left: $spacing--xsmall;
+  padding: $spacing--xsmall;
+}
