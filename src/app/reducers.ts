@@ -20,6 +20,11 @@ export default (state: State = initialState, action: AppAction) => {
         ...state,
         steps: action.payload,
       };
+    case getType(actions.setTempo):
+      return {
+        ...state,
+        tempo: action.payload,
+      };
     default:
       return state;
   }
