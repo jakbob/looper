@@ -29,13 +29,20 @@ module.exports = {
         loaders: [
           'style-loader',
           { 
-            loader: 'css-loader', options: { 
+            loader: 'css-loader', 
+            options: { 
               importLoaders: 1,
               modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
+              localIdentName: "[local]___[hash:base64:5]",
+              camelCase: true
             }
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['src/assets/styles']
+            }
+          },
         ],
       },
       {
