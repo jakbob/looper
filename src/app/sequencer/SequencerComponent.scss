@@ -15,4 +15,8 @@
   height: 8rem;
   background: $color--orange;
   margin: $spacing--medium;
+
+  &.active {
+    border: 10px solid darken($color--orange, 20%);
+  }
 }

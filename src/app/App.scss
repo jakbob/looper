@@ -1,10 +1,16 @@
 @import "shared";
 
-:global body {
-  padding: 0;
-  margin: 0;
-  font-size: $font-size--normal;
-  color: $color--text;
+:global {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: $font-size--normal;
+    color: $color--text;
+  }
 }
 
 .app {
