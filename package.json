@@ -77,6 +77,7 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
+    "tone": "^0.12.80",
     "typesafe-actions": "^2.0.4"
   }
 }
