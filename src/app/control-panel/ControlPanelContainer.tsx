@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { changeTempo } from '../actions/player';
-import { setSteps } from '../actions/sequence';
+import { setNumberOfSteps } from '../actions/sequence';
 import { State } from '../reducers';
 import { getSteps, getTempo } from '../selectors';
 import { ControlPanel } from './ControlPanelComponent';
@@ -11,7 +11,7 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchtoProps = {
-  onStepsChange: setSteps,
+  onStepsChange: setNumberOfSteps,
   onTempoChange: changeTempo
 };
 

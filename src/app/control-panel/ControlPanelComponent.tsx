@@ -4,7 +4,7 @@ import PlayerControl from './PlayerControl';
 import { ValueControl } from './ValueControl';
 
 export interface Props {
-  steps: number;
+  steps: string[];
   tempo: number;
   onStepsChange: (steps: number) => void;
   onTempoChange: (steps: number) => void;
@@ -26,7 +26,7 @@ export class ControlPanel extends React.Component<Props, {}> {
           <span>
             <ValueControl
               label="Steps"
-              value={this.props.steps}
+              value={this.props.steps.length}
               onChange={steps => this.props.onStepsChange(steps)}
             />
           </span>
