@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as styles from './ControlPanelComponent.scss';
+import PlayerControl from './PlayerControl';
 import { ValueControl } from './ValueControl';
 
 export interface Props {
@@ -13,7 +14,7 @@ export class ControlPanel extends React.Component<Props, {}> {
   public render() {
     return (
       <div className={styles.controlPanel}>
-        <div>Play/Stop</div>
+        <div><PlayerControl /></div>
         <div>
           <span className={styles.tempoControl}>
             <ValueControl

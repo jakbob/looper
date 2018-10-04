@@ -37,6 +37,7 @@
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/classnames": "^2.2.6",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.10.2",
     "@types/react": "^16.4.14",
@@ -68,11 +69,13 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "reselect": "^4.0.0",
     "typesafe-actions": "^2.0.4"
   }
 }

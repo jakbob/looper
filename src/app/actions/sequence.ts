@@ -1,6 +1,6 @@
 import { createAction } from 'typesafe-actions';
 
-export const setSteps = createAction('SET_STEPS', resolve => {
+export const setSteps = createAction('START', resolve => {
   return (steps: number) => resolve(steps);
 });
 

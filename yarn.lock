@@ -738,6 +738,11 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz#54c5a964462be3d4d78af631363c18d6fa91ac26"
   integrity sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==
 
+"@types/classnames@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.6.tgz#dbe8a666156d556ed018e15a4c65f08937c3f628"
+  integrity sha512-XHcYvVdbtAxVstjKxuULYqYaWIzHR15yr1pZj4fnGChuBVJlIAp9StJna0ZJNSgxPh4Nac2FL4JM3M11Tm6fqQ==
+
 "@types/jest@^23.3.2":
   version "23.3.2"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
@@ -2109,6 +2114,11 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-css@4.2.x:
   version "4.2.1"
@@ -8452,6 +8462,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+reselect@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
+  integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"

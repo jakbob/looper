@@ -1,0 +1,14 @@
+@import "shared";
+
+$button-size: 25px;
+
+.control-button {
+  border: none;
+  background: none;
+  font-size: $button-size * 2;
+  line-height: $button-size;
+
+  &.active {
+    color: $color--pink;
+  }
+}

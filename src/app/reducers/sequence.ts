@@ -1,5 +1,5 @@
 import { ActionType, getType } from 'typesafe-actions';
-import * as actions from './actions';
+import * as actions from '../actions/sequence';
 
 export type AppAction = ActionType<typeof actions>;
 
@@ -8,12 +8,12 @@ export type State = Readonly<{
   tempo: number;
 }>;
 
-const initialState = {
+export const initialState = {
   steps: 8,
   tempo: 120,
 };
 
-export default (state: State = initialState, action: AppAction) => {
+export const reducer = (state: State = initialState, action: AppAction) => {
   switch (action.type) {
     case getType(actions.setSteps):
       return {
