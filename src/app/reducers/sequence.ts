@@ -1,30 +1,41 @@
 import { ActionType, getType } from 'typesafe-actions';
-import * as actions from '../actions/sequence';
+import * as playerActions from '../actions/player';
+import * as sequenceActions from '../actions/sequence';
 
-export type AppAction = ActionType<typeof actions>;
+export type Action = ActionType<typeof sequenceActions | typeof playerActions>;
 
 export type State = Readonly<{
   steps: number;
-  tempo: number;
+  activeStep?: number;
 }>;
 
 export const initialState = {
   steps: 8,
-  tempo: 120,
+  activeStep: null
 };
 
-export const reducer = (state: State = initialState, action: AppAction) => {
+export const reducer = (state: State = initialState, action: Action) => {
   switch (action.type) {
-    case getType(actions.setSteps):
+    case getType(sequenceActions.setSteps):
       return {
         ...state,
         steps: action.payload,
       };
-    case getType(actions.setTempo):
+    case getType(playerActions.start): 
       return {
         ...state,
-        tempo: action.payload,
-      };
+        activeStep: 1
+      }
+    case getType(playerActions.stop): 
+      return {
+        ...state,
+        activeStep: null
+      }
+    case getType(playerActions.beat): 
+      return {
+        ...state,
+        activeStep: (state.activeStep % state.steps) + 1
+      }
     default:
       return state;
   }

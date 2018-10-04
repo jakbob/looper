@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { setSteps, setTempo } from '../actions/sequence';
+import { setTempo } from '../actions/player';
+import { setSteps } from '../actions/sequence';
 import { State } from '../reducers';
 import { getSteps, getTempo } from '../selectors';
 import { ControlPanel } from './ControlPanelComponent';

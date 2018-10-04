@@ -5,7 +5,7 @@ import { Sequencer } from './SequencerComponent';
 
 const mapStateToProps = (state: State) => ({
   steps: getSteps(state),
-  activeStep: state.player.activeStep
+  activeStep: state.sequence.activeStep
 });
 
 export default connect(mapStateToProps, () => ({}))(Sequencer);
