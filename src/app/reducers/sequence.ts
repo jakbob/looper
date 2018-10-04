@@ -21,17 +21,17 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         steps: action.payload,
       };
-    case getType(playerActions.start): 
+    case getType(playerActions.setPlaying): 
       return {
         ...state,
         activeStep: 1
       }
-    case getType(playerActions.stop): 
+    case getType(playerActions.reset): 
       return {
         ...state,
         activeStep: null
       }
-    case getType(playerActions.beat): 
+    case getType(playerActions.beat):
       return {
         ...state,
         activeStep: (state.activeStep % state.steps) + 1

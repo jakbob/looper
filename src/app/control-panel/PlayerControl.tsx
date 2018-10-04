@@ -40,7 +40,7 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = {
-  start,
-  stop
+  start: start,
+  stop: stop
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerControl);

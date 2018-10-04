@@ -1,6 +1,5 @@
 import { ActionType, getType } from "typesafe-actions";
 import * as actions from '../actions/player';
-import store from "../store";
 
 export type PlayerAction = ActionType<typeof actions>;
 
@@ -18,19 +17,10 @@ let timer;
 
 export const reducer = (state: State = initialState, action: PlayerAction) => {
   switch (action.type) {
-    case getType(actions.start):
-      timer = setInterval(() => {
-        store.dispatch(actions.beat());
-      }, 60000 / state.tempo);
+    case getType(actions.setPlaying):
       return {
         ...state,
-        playing: true,
-      }
-    case getType(actions.stop):
-      clearInterval(timer);
-      return {
-        ...state,
-        playing: false
+        playing: action.payload,
       }
     case getType(actions.setTempo):
       return {
