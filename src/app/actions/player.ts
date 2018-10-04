@@ -27,9 +27,17 @@ export const start = (): ThunkAction<void, State, void, ActionType<typeof setPla
 }
 
 export const stop = (): ThunkAction<void, State, void, ActionType<typeof setPlaying | typeof reset>> => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(setPlaying(false));
     dispatch(reset());
     clearInterval(beatInterval);
+  }
+}
+
+export const changeTempo = (tempo: number): ThunkAction<void, State, void, ActionType<typeof setTempo>> => {
+  return (dispatch) => {
+    dispatch(setTempo(tempo));
+    clearInterval(beatInterval);
+    startBeatDispatch(dispatch, tempo);
   }
 }
