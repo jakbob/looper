@@ -1,7 +1,7 @@
-import { Dispatch } from "redux";
-import { ThunkAction } from "redux-thunk";
+import { Dispatch } from 'redux';
+import { ThunkAction } from 'redux-thunk';
 import { ActionType, createAction } from 'typesafe-actions';
-import { State } from "../reducers";
+import { State } from '../reducers';
 
 let beatInterval;
 
@@ -27,7 +27,7 @@ export const start = (): ThunkAction<void, State, void, ActionType<typeof setPla
 }
 
 export const stop = (): ThunkAction<void, State, void, ActionType<typeof setPlaying | typeof reset>> => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch(setPlaying(false));
     dispatch(reset());
     clearInterval(beatInterval);
@@ -35,7 +35,7 @@ export const stop = (): ThunkAction<void, State, void, ActionType<typeof setPlay
 }
 
 export const changeTempo = (tempo: number): ThunkAction<void, State, void, ActionType<typeof setTempo>> => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch(setTempo(tempo));
     clearInterval(beatInterval);
     startBeatDispatch(dispatch, tempo);

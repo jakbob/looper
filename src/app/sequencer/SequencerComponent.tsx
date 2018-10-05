@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import classnames from 'classnames';
 import * as React from 'react';
 import * as styles from './SequencerComponent.scss';
 

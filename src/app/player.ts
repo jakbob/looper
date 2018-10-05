@@ -1,5 +1,5 @@
-import * as Tone from "tone";
-import store from "./store";
+import * as Tone from 'tone';
+import store from './store';
 
 export function play() {
   let stepNum: number = null;

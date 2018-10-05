@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import classnames from 'classnames';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { start, stop } from '../actions/player';
@@ -23,12 +23,12 @@ class PlayerControl extends React.Component<Props, {}> {
               [styles.active]: this.props.playing
             })
           }
-          title="Play"
+          title='Play'
         >▸</button>
         <button 
           onClick={() => this.props.stop()}
           className={styles.controlButton}
-          title="Stop"
+          title='Stop'
         >▪</button>
       </div>
     )
@@ -40,7 +40,7 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = {
-  start: start,
-  stop: stop
+  start,
+  stop
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerControl);

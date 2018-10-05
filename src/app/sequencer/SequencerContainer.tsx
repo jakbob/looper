@@ -5,8 +5,8 @@ import { getSteps } from '../selectors';
 import { Sequencer } from './SequencerComponent';
 
 const mapStateToProps = (state: State) => ({
+  activeStep: state.sequence.activeStep,
   steps: getSteps(state),
-  activeStep: state.sequence.activeStep
 });
 
 const mapDispatchToProps = {

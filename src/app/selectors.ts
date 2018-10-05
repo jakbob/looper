@@ -1,5 +1,5 @@
-import { createSelector } from "reselect";
-import { State } from "./reducers";
+import { createSelector } from 'reselect';
+import { State } from './reducers';
 
 const getSequenceState = (state: State) => state.sequence;
 const getPlayerState = (state: State) => state.player;
