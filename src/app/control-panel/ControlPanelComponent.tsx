@@ -18,14 +18,14 @@ export class ControlPanel extends React.Component<Props, {}> {
         <div>
           <span className={styles.tempoControl}>
             <ValueControl
-              label="Tempo"
+              label='Tempo'
               value={this.props.tempo}
               onChange={tempo => this.props.onTempoChange(tempo)}
             />
           </span>
           <span>
             <ValueControl
-              label="Steps"
+              label='Steps'
               value={this.props.steps.length}
               onChange={steps => this.props.onStepsChange(steps)}
             />

@@ -39,6 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "@types/classnames": "^2.2.6",
     "@types/jest": "^23.3.2",
+    "@types/lodash-es": "^4.17.1",
     "@types/node": "^10.10.2",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
@@ -70,6 +71,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "lodash-es": "^4.17.11",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",

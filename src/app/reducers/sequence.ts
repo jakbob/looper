@@ -23,8 +23,8 @@ export type State = Readonly<{
 
 
 export const initialState = {
+  activeStep: null,
   steps: Array(8).fill(null),
-  activeStep: null
 };
 
 function setNumberOfSteps(steps: string[], numSteps) {

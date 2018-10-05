@@ -8,5 +8,6 @@
     "interface-name": false,
     "arrow-parens": [true, "ban-single-arg-parens"],
     "jsx-no-lambda": false,
+    "no-console": true
   }
 }
