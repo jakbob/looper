@@ -94,10 +94,10 @@ export class SequenceStep extends React.Component<Props, {}> {
     const keyIndex = validKeys.indexOf(currentKey);
     const octaveIndex = validOctaves.indexOf(currentOctave);
 
-    if ((keyIndex + direction) > 0 && (keyIndex + direction) < validKeys.length) {
+    if ((keyIndex + direction) >= 0 && (keyIndex + direction) < validKeys.length) {
       const nextKey = validKeys[keyIndex + direction];
       this.props.onStepChange(nextKey + currentOctave);
-    } else if ((octaveIndex + direction) > 0 && (octaveIndex + direction) < validOctaves.length) {
+    } else if ((octaveIndex + direction) >= 0 && (octaveIndex + direction) < validOctaves.length) {
       const nextKeyIndex = (((keyIndex + direction) % validKeys.length) + validKeys.length) % validKeys.length;
       const nextKey = validKeys[nextKeyIndex];
       const nextOctave = validOctaves[octaveIndex + direction];
