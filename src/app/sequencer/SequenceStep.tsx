@@ -3,7 +3,7 @@ import * as React from 'react';
 import ReactDOM = require('react-dom');
 import * as styles from './SequenceStep.scss';
 
-const validKeys = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+const validKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 const validOctaves = ['1', '2', '3', '4', '5', '6', '7'];
 
 export interface Props {
@@ -55,6 +55,34 @@ export class SequenceStep extends React.Component<Props, {}> {
     if (e.key === 'Backspace' || e.key === 'Delete') {
       this.props.onStepChange('');
       return;
+    }
+    if (e.key === 'ArrowUp') {
+      this.incrementStep(1);
+    }
+    if (e.key === 'ArrowDown') {
+      this.incrementStep(-1);
+    }
+  }
+
+  private incrementStep(direction: 1 | -1) {
+    if (!this.props.step) {
+      this.props.onStepChange('C4');
+      return;
+    }
+
+    const currentKey = this.props.step.slice(0, 1);
+    const currentOctave = this.props.step.slice(1, 2);
+    const keyIndex = validKeys.indexOf(currentKey);
+    const octaveIndex = validOctaves.indexOf(currentOctave);
+
+    if ((keyIndex + direction) > 0 && (keyIndex + direction) < validKeys.length) {
+      const nextKey = validKeys[keyIndex + direction];
+      this.props.onStepChange(nextKey + currentOctave);
+    } else if ((octaveIndex + direction) > 0 && (octaveIndex + direction) < validOctaves.length) {
+      const nextKeyIndex = (((keyIndex + direction) % validKeys.length) + validKeys.length) % validKeys.length;
+      const nextKey = validKeys[nextKeyIndex];
+      const nextOctave = validOctaves[octaveIndex + direction];
+      this.props.onStepChange(nextKey + nextOctave);
     }
   }
 }

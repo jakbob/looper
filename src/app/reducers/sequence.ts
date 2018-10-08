@@ -35,7 +35,6 @@ export const reducer = (state: State = initialState, action: Action) => {
         steps: setNumberOfSteps(state.steps, action.payload),
       };
     case getType(sequenceActions.updateStep):
-      console.log('set step', action.payload.stepValue);
       return {
         ...state,
         steps: updateStep(state.steps, action.payload.stepIndex, action.payload.stepValue)
