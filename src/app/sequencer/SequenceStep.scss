@@ -1,0 +1,20 @@
+@import "shared";
+
+.step {
+  $step-size: 8rem;
+
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $step-size;
+  height: $step-size;
+  text-align: center;
+  background: $color--orange;
+  font-size: $font-size--large;
+  margin: $spacing--medium;
+
+  &.active {
+    border: 10px solid darken($color--orange, 20%);
+  }
+}

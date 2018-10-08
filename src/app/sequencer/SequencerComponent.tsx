@@ -1,23 +1,23 @@
-import classnames from 'classnames';
 import * as React from 'react';
 import * as styles from './SequencerComponent.scss';
+import { SequenceStep } from './SequenceStep';
 
 interface Props {
   steps: string[];
   activeStep: number;
-  incrementStep: (stepIndex: number) => void
+  changeStep: (stepIndex: number, stepValue: string) => void
 }
 
 export class Sequencer extends React.Component<Props, undefined> {
   public render() {
-    const steps = this.props.steps 
+    const steps = this.props.steps
       ? this.props.steps.map((step, i) => (
-        <div 
-          className={classnames(styles.step, {
-            [styles.active]: this.props.activeStep === i + 1
-          })}
-          onClick={() => this.props.incrementStep(i)}
-        >{step}</div>
+        <SequenceStep
+          key={i}
+          step={step}
+          isActive={this.props.activeStep === i + 1}
+          onStepChange={val => this.props.changeStep(i, val)}
+        />
       ))
       : null;
 

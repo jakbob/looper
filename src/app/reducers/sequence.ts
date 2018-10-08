@@ -2,18 +2,6 @@ import { ActionType, getType } from 'typesafe-actions';
 import * as playerActions from '../actions/player';
 import * as sequenceActions from '../actions/sequence';
 
-
-const notes = [
-  null,
-  'C4',
-  'D4',
-  'E4',
-  'F4',
-  'G4',
-  'A4',
-  'B4',
-];
-
 export type Action = ActionType<typeof sequenceActions | typeof playerActions>;
 
 export type State = Readonly<{
@@ -35,12 +23,8 @@ function setNumberOfSteps(steps: string[], numSteps) {
   );
 }
 
-function incrementStep(steps, stepToInc) {
-  const currentValue = steps[stepToInc];
-  const currentValueIndex = notes.indexOf(currentValue);
-  const nextValue = notes[(currentValueIndex + 1) % notes.length];
-
-  return steps.map((s, index) => index === stepToInc ? nextValue : s);
+function updateStep(steps: string[], stepToUpdate: number, newValue: string) {
+  return steps.map((s, index) => index === stepToUpdate ? newValue : s);
 }
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -50,10 +34,10 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         steps: setNumberOfSteps(state.steps, action.payload),
       };
-    case getType(sequenceActions.incrementStep):
+    case getType(sequenceActions.updateStep):
       return {
         ...state,
-        steps: incrementStep(state.steps, action.payload)
+        steps: updateStep(state.steps, action.payload.stepIndex, action.payload.stepValue)
       }
     case getType(playerActions.setPlaying): 
       return {

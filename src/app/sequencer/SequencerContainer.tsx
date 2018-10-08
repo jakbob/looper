@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { incrementStep } from '../actions/sequence';
+import { updateStep } from '../actions/sequence';
 import { State } from '../reducers';
 import { getSteps } from '../selectors';
 import { Sequencer } from './SequencerComponent';
@@ -10,7 +10,7 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = {
-  incrementStep
+  changeStep: updateStep
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sequencer);
