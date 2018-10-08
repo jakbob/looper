@@ -41,9 +41,22 @@ export class SequenceStep extends React.Component<Props, {}> {
   }
 
   private handleInput = (e: KeyboardEvent) => {
+    if (e.code.startsWith('Key')) {
+      this.handleSetValue(e);
+    }
+
+    if (e.key === 'Backspace' || e.key === 'Delete') {
+      this.handleDelete(e);
+    }
+
+    if (e.key.startsWith('Arrow')) {
+      this.handleIncrementStep(e);
+    }
+  }
+
+  private handleSetValue(e: KeyboardEvent) {
     e.preventDefault();
     const value = e.key.toUpperCase();
-
     if (validKeys.some(tone => value === tone)) {
       this.props.onStepChange(value + 4);
       return;
@@ -52,10 +65,16 @@ export class SequenceStep extends React.Component<Props, {}> {
       this.props.onStepChange(this.props.step.slice(0, 1) + value);
       return;
     }
-    if (e.key === 'Backspace' || e.key === 'Delete') {
-      this.props.onStepChange('');
-      return;
-    }
+  }
+
+  private handleDelete(e: KeyboardEvent) {
+    e.preventDefault();
+    this.props.onStepChange('');
+  }
+
+  private handleIncrementStep(e: KeyboardEvent) {
+    e.preventDefault();
+    
     if (e.key === 'ArrowUp') {
       this.incrementStep(1);
     }
