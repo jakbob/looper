@@ -9,39 +9,30 @@ const validOctaves = ['1', '2', '3', '4', '5', '6', '7'];
 export interface Props {
   step: string;
   isActive: boolean;
-  onStepChange: (step: string) => void 
+  onStepChange: (step: string) => void
 }
 
 export class SequenceStep extends React.Component<Props, {}> {
   private inputRef = React.createRef<HTMLInputElement>();
   public render() {
     return (
-      <div 
+      <div
         className={classnames(styles.step, {
           [styles.active]: this.props.isActive
         })}
       >
-        <input 
+        <input
           ref={this.inputRef}
           value={this.props.step}
           className={styles.stepInput}
+          onKeyDown={e => this.handleInput(e)}
         />
       </div>
     )
   }
-  
-  public componentDidMount() {
-    const input = ReactDOM.findDOMNode(this.inputRef.current);
-    input.addEventListener('keydown', this.handleInput);
-  }
 
-  public componentWillUnmount() {
-    const input = ReactDOM.findDOMNode(this.inputRef.current);
-    input.removeEventListener('keydown', this.handleInput);
-  }
-
-  private handleInput = (e: KeyboardEvent) => {
-    if (e.code.startsWith('Key')) {
+  private handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (/[A-Z]|[0-9]/i.test(e.key)) {
       this.handleSetValue(e);
     }
 
@@ -54,27 +45,27 @@ export class SequenceStep extends React.Component<Props, {}> {
     }
   }
 
-  private handleSetValue(e: KeyboardEvent) {
+  private handleSetValue(e: React.KeyboardEvent<HTMLInputElement>) {
     e.preventDefault();
     const value = e.key.toUpperCase();
     if (validKeys.some(tone => value === tone)) {
       this.props.onStepChange(value + 4);
       return;
     }
-    if (validOctaves.some(oct => value === oct)) { 
+    if (validOctaves.some(oct => value === oct) && this.props.step) {
       this.props.onStepChange(this.props.step.slice(0, 1) + value);
       return;
     }
   }
 
-  private handleDelete(e: KeyboardEvent) {
+  private handleDelete(e: React.KeyboardEvent<HTMLInputElement>) {
     e.preventDefault();
     this.props.onStepChange('');
   }
 
-  private handleIncrementStep(e: KeyboardEvent) {
+  private handleIncrementStep(e: React.KeyboardEvent<HTMLInputElement>) {
     e.preventDefault();
-    
+
     if (e.key === 'ArrowUp') {
       this.incrementStep(1);
     }
