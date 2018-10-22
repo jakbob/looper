@@ -51,5 +51,14 @@ describe('SequenceStep', () => {
     });
     expect(onStepChange).toHaveBeenCalledWith('');
   });
+
+  it('should allow normal behaviour of tab', () => {
+    const preventDefault = jest.fn();
+    TestUtils.Simulate.keyDown(inputNode, {
+      key: 'Tab',
+      preventDefault
+    });
+    expect(preventDefault).not.toHaveBeenCalled();
+  });
 })
 

@@ -31,7 +31,7 @@ export class SequenceStep extends React.Component<Props, {}> {
   }
 
   private handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (/[A-Z]|[0-9]/i.test(e.key)) {
+    if (/^([A-Z]|[0-9])$/i.test(e.key)) {
       this.handleSetValue(e);
     }
 

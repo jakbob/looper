@@ -30,7 +30,7 @@
     "lint:sass": "stylelint ./src/**/*.scss",
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "test": "jest --watch --coverage --config=configs/jest.config.js"
+    "test": "jest --watch --config=configs/jest.config.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
