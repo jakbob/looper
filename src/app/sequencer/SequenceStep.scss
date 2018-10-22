@@ -27,4 +27,8 @@
   height: 100%;
   text-align: center;
   font-size: $font-size--large;
+
+  &:focus {
+    text-decoration: underline;
+  }
 }

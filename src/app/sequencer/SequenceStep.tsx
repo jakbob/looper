@@ -5,6 +5,8 @@ import * as styles from './SequenceStep.scss';
 const validKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 const validOctaves = ['1', '2', '3', '4', '5', '6', '7'];
 
+const emptyValue = '  ';
+
 export interface Props {
   step: string;
   isActive: boolean;
@@ -22,9 +24,10 @@ export class SequenceStep extends React.Component<Props, {}> {
       >
         <input
           ref={this.inputRef}
-          value={this.props.step}
+          value={this.props.step || emptyValue}
           className={styles.stepInput}
           onKeyDown={e => this.handleInput(e)}
+          readOnly={true}
         />
       </div>
     )
