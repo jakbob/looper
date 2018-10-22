@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import ReactDOM = require('react-dom');
 import * as styles from './SequenceStep.scss';
 
 const validKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];

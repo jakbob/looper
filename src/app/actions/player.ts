@@ -3,10 +3,10 @@ import { ThunkAction } from 'redux-thunk';
 import { ActionType, createAction } from 'typesafe-actions';
 import { State } from '../reducers';
 
-let beatInterval;
+let beatInterval: number;
 
 function startBeatDispatch(dispatch: Dispatch, tempo: number) {
-  beatInterval = setInterval(() => {
+  beatInterval = window.setInterval(() => {
     dispatch(beat());
   }, 60000 / tempo);
 }

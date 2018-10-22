@@ -12,7 +12,7 @@ export interface Props {
   stop: () => void;
 }
 
-class PlayerControl extends React.Component<Props, {}> {
+export class PlayerControl extends React.Component<any, any> {
   public render() {
     return (
       <div>
@@ -43,4 +43,5 @@ const mapDispatchToProps = {
   start,
   stop
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerControl);

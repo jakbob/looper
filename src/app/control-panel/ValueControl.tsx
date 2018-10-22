@@ -5,7 +5,7 @@ import * as styles from './ValueControl.scss';
 export interface Props {
   label: string;
   value: number;
-  onChange: (value) => void;
+  onChange: (value: number) => void;
 }
 
 export interface State {
@@ -13,16 +13,17 @@ export interface State {
 }
 
 export class ValueControl extends React.Component<Props, State> {
-
   private callChangeHandlerDebounced = debounce(value => {
     this.props.onChange(value)
   }, 400);
-  constructor(props) {
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       inputValue: props.value
     };
   }
+
   public render() {
     return (
       <label className={styles.label}>
